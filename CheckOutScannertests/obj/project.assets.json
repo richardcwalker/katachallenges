@@ -1253,6 +1253,16 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
+      },
+      "CheckOutScanner/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/CheckOutScanner.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CheckOutScanner.dll": {}
+        }
       }
     }
   },
@@ -4934,10 +4944,16 @@
         "system.xml.xpath.xmldocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xmldocument.nuspec"
       ]
+    },
+    "CheckOutScanner/1.0.0": {
+      "type": "project",
+      "path": "../CheckOutScanner/CheckOutScanner.csproj",
+      "msbuildProject": "../CheckOutScanner/CheckOutScanner.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "CheckOutScanner >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 16.9.4",
       "NUnit >= 3.13.1",
       "NUnit3TestAdapter >= 3.17.0",
@@ -4977,7 +4993,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Development\\katachallenges\\CheckOutScanner\\CheckOutScanner\\CheckOutScanner.csproj": {
+              "projectPath": "C:\\Development\\katachallenges\\CheckOutScanner\\CheckOutScanner\\CheckOutScanner.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

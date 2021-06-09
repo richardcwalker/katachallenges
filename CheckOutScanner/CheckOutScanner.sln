@@ -7,6 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CheckOutScanner", "CheckOut
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckOutScannertests", "..\CheckOutScannertests\CheckOutScannertests.csproj", "{27F4A21D-7836-4C41-8B59-6E959CFFC344}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{B48934EB-EC29-41C8-9A84-944F887CE8A3}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\Users\Festa\Desktop\CodingChallenges\SupermarketCheckout\Coding Kata.docx = ..\..\..\..\Users\Festa\Desktop\CodingChallenges\SupermarketCheckout\Coding Kata.docx
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

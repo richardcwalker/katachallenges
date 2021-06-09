@@ -1,3 +1,4 @@
+using CheckOutScanner.Models;
 using NUnit.Framework;
 
 namespace CheckOutScannertests
@@ -7,6 +8,7 @@ namespace CheckOutScannertests
         [SetUp]
         public void Setup()
         {
+            Item newItem = new Item();
         }
 
         [Test]

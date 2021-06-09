@@ -99,3 +99,6 @@ C:\Development\katachallenges\CheckOutScanner\CheckOutScannertests\obj\Debug\net
 C:\Development\katachallenges\CheckOutScanner\CheckOutScannertests\obj\Debug\net5.0\ref\CheckOutScannertests.dll
 C:\Development\katachallenges\CheckOutScanner\CheckOutScannertests\obj\Debug\net5.0\CheckOutScannertests.pdb
 C:\Development\katachallenges\CheckOutScanner\CheckOutScannertests\obj\Debug\net5.0\CheckOutScannertests.genruntimeconfig.cache
+C:\Development\katachallenges\CheckOutScanner\CheckOutScannertests\bin\Debug\net5.0\CoverletSourceRootsMapping
+C:\Development\katachallenges\CheckOutScanner\CheckOutScannertests\bin\Debug\net5.0\CheckOutScanner.dll
+C:\Development\katachallenges\CheckOutScanner\CheckOutScannertests\bin\Debug\net5.0\CheckOutScanner.pdb
