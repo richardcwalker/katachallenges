@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "CheckOutScanner/1.0.0": {
+        "runtime": {
+          "CheckOutScanner.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CheckOutScanner/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

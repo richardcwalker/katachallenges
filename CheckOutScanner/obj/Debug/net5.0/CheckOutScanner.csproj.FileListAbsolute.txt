@@ -1,0 +1,12 @@
+C:\Development\Katachallenges\CheckOutScanner\bin\Debug\net5.0\CheckOutScanner.deps.json
+C:\Development\Katachallenges\CheckOutScanner\bin\Debug\net5.0\CheckOutScanner.dll
+C:\Development\Katachallenges\CheckOutScanner\bin\Debug\net5.0\ref\CheckOutScanner.dll
+C:\Development\Katachallenges\CheckOutScanner\bin\Debug\net5.0\CheckOutScanner.pdb
+C:\Development\Katachallenges\CheckOutScanner\obj\Debug\net5.0\CheckOutScanner.csproj.AssemblyReference.cache
+C:\Development\Katachallenges\CheckOutScanner\obj\Debug\net5.0\CheckOutScanner.GeneratedMSBuildEditorConfig.editorconfig
+C:\Development\Katachallenges\CheckOutScanner\obj\Debug\net5.0\CheckOutScanner.AssemblyInfoInputs.cache
+C:\Development\Katachallenges\CheckOutScanner\obj\Debug\net5.0\CheckOutScanner.AssemblyInfo.cs
+C:\Development\Katachallenges\CheckOutScanner\obj\Debug\net5.0\CheckOutScanner.csproj.CoreCompileInputs.cache
+C:\Development\Katachallenges\CheckOutScanner\obj\Debug\net5.0\CheckOutScanner.dll
+C:\Development\Katachallenges\CheckOutScanner\obj\Debug\net5.0\ref\CheckOutScanner.dll
+C:\Development\Katachallenges\CheckOutScanner\obj\Debug\net5.0\CheckOutScanner.pdb
