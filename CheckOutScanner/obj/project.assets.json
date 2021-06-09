@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Development\\Katachallenges\\CheckOutScanner\\CheckOutScanner.csproj",
+      "projectUniqueName": "C:\\Development\\katachallenges\\CheckOutScanner\\CheckOutScanner\\CheckOutScanner.csproj",
       "projectName": "CheckOutScanner",
-      "projectPath": "C:\\Development\\Katachallenges\\CheckOutScanner\\CheckOutScanner.csproj",
+      "projectPath": "C:\\Development\\katachallenges\\CheckOutScanner\\CheckOutScanner\\CheckOutScanner.csproj",
       "packagesPath": "C:\\Users\\Festa\\.nuget\\packages\\",
-      "outputPath": "C:\\Development\\Katachallenges\\CheckOutScanner\\obj\\",
+      "outputPath": "C:\\Development\\katachallenges\\CheckOutScanner\\CheckOutScanner\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",

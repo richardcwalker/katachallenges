@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zgSFjI6eivpu9jOJYsSAfKLuNJ3XRcbjLDT/FUTBO9nQWFlZHEf8/+guNZig2dj3eNiV1pcoWjxeEoxaLXfQ+A==",
+  "dgSpecHash": "UYqD03zD4Jt9FNsWlclQxORMtH+We6kJ60WKKv7HpWOECljTyEUlAgeLFPGJiEA2R6Bk4B08oq3YYOb/1xHawg==",
   "success": true,
-  "projectFilePath": "C:\\Development\\Katachallenges\\CheckOutScanner\\CheckOutScanner.csproj",
+  "projectFilePath": "C:\\Development\\katachallenges\\CheckOutScanner\\CheckOutScanner\\CheckOutScanner.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
