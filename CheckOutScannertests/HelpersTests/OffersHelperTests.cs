@@ -1,5 +1,6 @@
 ﻿using CheckOutScanner.Helpers;
 using CheckOutScanner.Services;
+using CheckOutScannerTests;
 using NUnit.Framework;
 using System;
 using System.Collections;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 namespace CheckOutScannertests.HelpersTests
 {
     [TestFixture]
-    public class OffersHelperTests
+    public class OffersHelperTests : TestBase
     {
         [Test]
         public void OffersHelperConstructorTest()

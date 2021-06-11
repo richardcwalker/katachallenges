@@ -6,10 +6,16 @@ using System.Threading.Tasks;
 
 namespace CheckOutScanner.Services
 {
-    public class CheckOutService
+    public class CheckOutService: ServicesBase
     {
         public CheckOutService()
         {
+
+        }
+
+        public bool ScanItem()
+        {
+            return true;
 
         }
     }

@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using CheckOutScannerTests;
+using NUnit.Framework;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 namespace CheckOutScannertests.HelpersTests
 {
     [TestFixture]
-    public class CheckOutHelperTests
+    public class CheckOutHelperTests : TestBase
     {
         [Test]
         public void CheckOutHelperConstructorTest()

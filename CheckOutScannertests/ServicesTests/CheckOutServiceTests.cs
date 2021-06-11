@@ -1,4 +1,5 @@
-﻿using CheckOutScanner.Services;
+﻿using CheckOutScanner.Helpers;
+using CheckOutScanner.Services;
 using NUnit.Framework;
 using System;
 using System.Collections;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 namespace CheckOutScannerTests.ServicesTests
 {
     [TestFixture]
-    public class CheckOutServiceTests
+    public class CheckOutServiceTests : TestBase
     {
 
         [Test]
@@ -18,6 +19,15 @@ namespace CheckOutScannerTests.ServicesTests
         {
             CheckOutService checkOutService = new CheckOutService();
             Assert.IsNotNull(checkOutService);
+        }
+
+        [Test]
+        public void CheckOutServiceScan()
+        {
+            //Helper -> Service
+            CheckOutHelper checkOutServiceHelper = new CheckOutHelper();
+            //checkOutService.ScanItem
+            Assert.Inconclusive();
         }
     }
 }

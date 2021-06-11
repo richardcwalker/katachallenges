@@ -11,7 +11,7 @@ namespace CheckOutScanner.Helpers
     //Load offers into memory
     //Calc offer QuantityAdded / QuantityOfferLimit 
     
-    public class OffersHelper
+    public class OffersHelper : HelpersBase
     {
         private OffersService _offersService;
         public OffersHelper(OffersService offersService)

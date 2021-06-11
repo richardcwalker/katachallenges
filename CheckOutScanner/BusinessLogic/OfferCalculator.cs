@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CheckOutScanner.BusinessLogic
 {
-    public class OfferCalculator
+    public class OfferCalculator : BusinessLogicBase
     {
         public OfferCalculator()
         {

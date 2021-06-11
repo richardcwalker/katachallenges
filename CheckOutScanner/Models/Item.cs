@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace CheckOutScanner.Models
 {
-    public class Item
+    public class Item : ModelsBase
     {
         public string SKU { get; set; }
         public decimal UnitPrice { get; set; }
+        public string ProductName { get; set; }
     }
 }

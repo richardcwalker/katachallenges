@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CheckOutScanner.Models
 {
-    public class Offer
+    public class Offer : ModelsBase
     {
         public string SKU { get; set; }
         public int Quantity { get; set; }

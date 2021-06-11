@@ -3,7 +3,7 @@ using CheckOutScanner.Models;
 
 namespace CheckOutScanner.BusinessLogic
 {
-    public class Checkout
+    public class Checkout : BusinessLogicBase
     {
         private ItemHelper itemHelper;
         public Checkout()

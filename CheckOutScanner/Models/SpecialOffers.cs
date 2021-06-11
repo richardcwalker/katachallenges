@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CheckOutScanner.Models
 {
-    public class SpecialOffers
+    public class SpecialOffers : ModelsBase
     {
         public SpecialOffers()
         {

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace CheckOutScannerTests.BusinessLogicTests
 {
     [TestFixture]
-    public class CheckOutTests
+    public class CheckOutTests : TestBase
     {
         [Test]
         public void CheckOutConstructorTest()

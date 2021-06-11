@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CheckOutScanner.Services
 {
-    public class ItemService
+    public class ItemService : ServicesBase
     {
         public ItemService()
         {
@@ -23,7 +23,7 @@ namespace CheckOutScanner.Services
             return BuildItemCostPriceTable();
         }
 
-        internal bool AddItem(Item item)
+        public bool AddItem(Item item)
         {
             if (item != null)
             {

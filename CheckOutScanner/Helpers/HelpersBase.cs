@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace CheckOutScanner.Helpers
 {
-    public class CheckOutHelper : HelpersBase
+    public class HelpersBase
     {
-        public CheckOutHelper()
-        {
-
-        }
     }
 }

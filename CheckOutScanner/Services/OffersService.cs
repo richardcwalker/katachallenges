@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CheckOutScanner.Services
 {
-    public class OffersService
+    public class OffersService : ServicesBase
     {
         public OffersService()
         {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CheckOutScanner.Models
 {
-    public class RunningTotal
+    public class RunningTotal : ModelsBase
     {
         public decimal Total()
         {

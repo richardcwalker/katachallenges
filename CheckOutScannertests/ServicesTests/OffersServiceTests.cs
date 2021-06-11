@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace CheckOutScannerTests.ServicesTests
 {
     [TestFixture]
-    public class OffersServiceTest
+    public class OffersServiceTest : TestBase
     {
         [Test]
         public void OffersServiceTestConstructorTest()

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace CheckOutScannerTests.ServicesTests
 {
     [TestFixture]
-    public class ErrorHandlingServiceTests
+    public class ErrorHandlingServiceTests : TestBase
     {
         [Test]
         public void ErrorHandlingServiceConstructorTest()

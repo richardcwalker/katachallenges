@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CheckOutScanner.Models
 {
-    public class Error
+    public class Error : ModelsBase
     {
         public int ErrorCode { get; set; }
         public string ErrorMessage { get; set; }

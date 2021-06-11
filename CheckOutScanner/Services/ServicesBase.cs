@@ -4,13 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CheckOutScanner.Helpers
+namespace CheckOutScanner.Services
 {
-    public class CheckOutHelper : HelpersBase
+    public class ServicesBase
     {
-        public CheckOutHelper()
-        {
-
-        }
     }
 }

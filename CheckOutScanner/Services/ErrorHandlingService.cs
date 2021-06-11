@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CheckOutScanner.Services
 {
-    public class ErrorHandlingService
+    public class ErrorHandlingService : ServicesBase
     {
         public ErrorHandlingService()
         {

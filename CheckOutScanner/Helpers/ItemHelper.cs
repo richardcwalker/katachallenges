@@ -11,7 +11,7 @@ namespace CheckOutScanner.Helpers
     /// <summary>
     /// Helper for items 
     /// </summary>
-    public class ItemHelper
+    public class ItemHelper : HelpersBase
     {
         private ItemService _itemService;
         public ItemHelper(ItemService itemService)
