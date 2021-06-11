@@ -17,7 +17,7 @@ namespace CheckOutScanner.Services
         /// Get the offers table for our totals calcs
         /// </summary>
         /// <returns>A table of prices (SKU, quantity to use for offer and cost)</returns>
-        public IDictionary<string, Offer> GetSKUPriceTable()
+        public IDictionary<string, Offer> GetOffersPriceTable()
         {
             Dictionary<string, Offer> OfferPriceTable = new Dictionary<string, Offer>();
             //TODO - Refactor to get from DAL / DB

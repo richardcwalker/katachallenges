@@ -20,7 +20,7 @@ namespace CheckOutScannertests.ServicesTests
         }
 
         [Test]
-        public void GetPriceTable()
+        public void GetItemCostPriceTable()
         {
             ItemService itemService = new ItemService();
             IDictionary<string, decimal> itemCostTable = itemService.GetItemCostPriceTable();

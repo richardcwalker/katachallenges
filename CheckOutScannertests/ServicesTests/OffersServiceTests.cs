@@ -24,7 +24,7 @@ namespace CheckOutScannertests.ServicesTests
         public void GetOffersTable()
         {
             OffersService offersService = new OffersService();
-            IDictionary<string, Offer> offerCostTable = offersService.GetSKUPriceTable();
+            IDictionary<string, Offer> offerCostTable = offersService.GetOffersPriceTable();
 
             Assert.IsTrue(true);
         }

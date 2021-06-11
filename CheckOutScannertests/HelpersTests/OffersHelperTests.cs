@@ -1,4 +1,6 @@
-﻿using NUnit.Framework;
+﻿using CheckOutScanner.Helpers;
+using CheckOutScanner.Services;
+using NUnit.Framework;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,11 +14,18 @@ namespace CheckOutScannertests.HelpersTests
     public class OffersHelperTests
     {
         [Test]
-        public void TestMethod()
+        public void OffersHelperConstructorTest()
         {
-            // TODO: Add your test code here
-            var answer = 42;
-            Assert.That(answer, Is.EqualTo(42), "Some useful error message");
+            OffersHelper offersHelper = new OffersHelper(new OffersService());
+            Assert.IsNotNull(offersHelper);
+        }
+
+        [Test]
+        public void GetOffersTable()
+        {
+            OffersHelper offersHelper = new OffersHelper(new OffersService());
+            var tableOfOffers = offersHelper.GetOffersPriceTable();
+            Assert.IsNotNull(tableOfOffers);
         }
     }
 }
