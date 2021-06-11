@@ -1,3 +1,4 @@
+C:\Development\katachallenges\CheckOutScanner\CheckOutScannertests\bin\Debug\net5.0\CoverletSourceRootsMapping
 C:\Development\katachallenges\CheckOutScanner\CheckOutScannertests\bin\Debug\net5.0\testhost.dll
 C:\Development\katachallenges\CheckOutScanner\CheckOutScannertests\bin\Debug\net5.0\testhost.exe
 C:\Development\katachallenges\CheckOutScanner\CheckOutScannertests\bin\Debug\net5.0\Microsoft.TestPlatform.PlatformAbstractions.dll
@@ -89,6 +90,8 @@ C:\Development\katachallenges\CheckOutScanner\CheckOutScannertests\bin\Debug\net
 C:\Development\katachallenges\CheckOutScanner\CheckOutScannertests\bin\Debug\net5.0\zh-Hant\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
 C:\Development\katachallenges\CheckOutScanner\CheckOutScannertests\bin\Debug\net5.0\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
 C:\Development\katachallenges\CheckOutScanner\CheckOutScannertests\bin\Debug\net5.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:\Development\katachallenges\CheckOutScanner\CheckOutScannertests\bin\Debug\net5.0\CheckOutScanner.dll
+C:\Development\katachallenges\CheckOutScanner\CheckOutScannertests\bin\Debug\net5.0\CheckOutScanner.pdb
 C:\Development\katachallenges\CheckOutScanner\CheckOutScannertests\obj\Debug\net5.0\CheckOutScannertests.csproj.AssemblyReference.cache
 C:\Development\katachallenges\CheckOutScanner\CheckOutScannertests\obj\Debug\net5.0\CheckOutScannertests.GeneratedMSBuildEditorConfig.editorconfig
 C:\Development\katachallenges\CheckOutScanner\CheckOutScannertests\obj\Debug\net5.0\CheckOutScannertests.AssemblyInfoInputs.cache
@@ -99,6 +102,3 @@ C:\Development\katachallenges\CheckOutScanner\CheckOutScannertests\obj\Debug\net
 C:\Development\katachallenges\CheckOutScanner\CheckOutScannertests\obj\Debug\net5.0\ref\CheckOutScannertests.dll
 C:\Development\katachallenges\CheckOutScanner\CheckOutScannertests\obj\Debug\net5.0\CheckOutScannertests.pdb
 C:\Development\katachallenges\CheckOutScanner\CheckOutScannertests\obj\Debug\net5.0\CheckOutScannertests.genruntimeconfig.cache
-C:\Development\katachallenges\CheckOutScanner\CheckOutScannertests\bin\Debug\net5.0\CoverletSourceRootsMapping
-C:\Development\katachallenges\CheckOutScanner\CheckOutScannertests\bin\Debug\net5.0\CheckOutScanner.dll
-C:\Development\katachallenges\CheckOutScanner\CheckOutScannertests\bin\Debug\net5.0\CheckOutScanner.pdb

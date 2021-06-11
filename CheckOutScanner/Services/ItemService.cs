@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CheckOutScanner.Models
+namespace CheckOutScanner.Services
 {
-    public class Pricing
+    public class ItemService
     {
-        public decimal Total()
+        public ItemService()
         {
-            return 0m;
+
         }
     }
 }
