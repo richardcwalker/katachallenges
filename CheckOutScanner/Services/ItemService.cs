@@ -19,13 +19,13 @@ namespace CheckOutScanner.Services
         /// <returns>A table of prices (SKU and cost)</returns>
         public IDictionary <string, decimal> GetItemCostPriceTable()
         {
-            Dictionary<string, decimal> SKUPriceTable = new Dictionary<string, decimal>();
-            //TODO - Refactor to get from DAL / DB
-            SKUPriceTable.Add("A99", 0.50M);
-            SKUPriceTable.Add("B15", 0.30M);
-            SKUPriceTable.Add("C40", 0.60M);
+            Dictionary<string, decimal> ItemPriceTable = new Dictionary<string, decimal>();
+            //TODO Refactor into DAL
+            ItemPriceTable.Add("A99", 0.50M);
+            ItemPriceTable.Add("B15", 0.30M);
+            ItemPriceTable.Add("C40", 0.60M);
 
-            return SKUPriceTable;
+            return ItemPriceTable;
         }
     }
 }

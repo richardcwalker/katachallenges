@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "UYqD03zD4Jt9FNsWlclQxORMtH+We6kJ60WKKv7HpWOECljTyEUlAgeLFPGJiEA2R6Bk4B08oq3YYOb/1xHawg==",
+  "dgSpecHash": "bd6BzO3zvUZavq501RSBttrONTlFUt9Yb01ujQ1h9fSu9JTrrE2miFoPbLzMVveMIFjADMKd7KwFKQlF+6dnFA==",
   "success": true,
   "projectFilePath": "C:\\Development\\katachallenges\\CheckOutScanner\\CheckOutScanner\\CheckOutScanner.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Festa\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }
