@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CheckOutScanner.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,6 +19,29 @@ namespace CheckOutScanner.Services
         /// </summary>
         /// <returns>A table of prices (SKU and cost)</returns>
         public IDictionary <string, decimal> GetItemCostPriceTable()
+        {
+            return BuildItemCostPriceTable();
+        }
+
+        internal bool AddItem(Item item)
+        {
+            if (item != null)
+            {
+                return true;
+                //Some processing logging..
+            }
+            else
+            {
+                //Some error logging..
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Load price table for our items
+        /// </summary>
+        /// <returns>A table of prices (SKU and cost)</returns>
+        private IDictionary<string, decimal> BuildItemCostPriceTable()
         {
             Dictionary<string, decimal> ItemPriceTable = new Dictionary<string, decimal>();
             //TODO Refactor into DAL

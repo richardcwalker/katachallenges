@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31402.337
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CheckOutScanner", "CheckOutScanner.csproj", "{258A4B81-9D0C-423D-A21E-825E26E7D3A1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CheckOutScannertests", "..\CheckOutScannertests\CheckOutScannertests.csproj", "{27F4A21D-7836-4C41-8B59-6E959CFFC344}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CheckOutScannerTests", "..\CheckOutScannertests\CheckOutScannerTests.csproj", "{27F4A21D-7836-4C41-8B59-6E959CFFC344}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

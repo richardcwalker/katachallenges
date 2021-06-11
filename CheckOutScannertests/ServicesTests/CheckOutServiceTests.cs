@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CheckOutScannertests.ServicesTests
+namespace CheckOutScannerTests.ServicesTests
 {
     [TestFixture]
     public class CheckOutServiceTests

@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v5.0": {
-      "CheckOutScannertests/1.0.0": {
+      "CheckOutScannerTests/1.0.0": {
         "dependencies": {
           "CheckOutScanner": "1.0.0",
           "Microsoft.NET.Test.Sdk": "16.9.4",
@@ -15,7 +15,7 @@
           "coverlet.collector": "3.0.2"
         },
         "runtime": {
-          "CheckOutScannertests.dll": {}
+          "CheckOutScannerTests.dll": {}
         }
       },
       "coverlet.collector/3.0.2": {},
@@ -735,7 +735,7 @@
     }
   },
   "libraries": {
-    "CheckOutScannertests/1.0.0": {
+    "CheckOutScannerTests/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

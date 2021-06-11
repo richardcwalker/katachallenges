@@ -21,6 +21,15 @@ namespace CheckOutScanner.Services
         /// <returns>A table of prices (SKU, quantity to use for offer and cost)</returns>
         public IDictionary<string, Offer> GetOffersPriceTable()
         {
+           return BuildOffersPriceTable();
+        }
+
+        /// <summary>
+        /// Load the offers table for our totals calcs
+        /// </summary>
+        /// <returns>A table of prices (SKU, quantity to use for offer and cost)</returns>
+        private IDictionary<string, Offer> BuildOffersPriceTable()
+        {
             Dictionary<string, Offer> OfferPriceTable = new Dictionary<string, Offer>();
             //TODO Refactor into DAL
             OfferPriceTable.Add("A99", new Offer { SKU = "A99", Quantity = 3, OfferPrice = 1.30M });
@@ -28,6 +37,6 @@ namespace CheckOutScanner.Services
 
             return OfferPriceTable;
         }
-    
+
     }
 }

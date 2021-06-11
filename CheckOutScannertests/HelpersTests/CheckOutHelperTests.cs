@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 namespace CheckOutScannertests.HelpersTests
 {
     [TestFixture]
-    public class CheckOutHelper
+    public class CheckOutHelperTests
     {
         [Test]
         public void CheckOutHelperConstructorTest()
         {
-            CheckOutHelper itemHelper = new CheckOutHelper();
+            CheckOutHelperTests itemHelper = new CheckOutHelperTests();
             Assert.IsNotNull(itemHelper);
         }
 

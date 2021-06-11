@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CheckOutScannertests.BusinessLogicTests
+namespace CheckOutScannerTests.BusinessLogicTests
 {
     [TestFixture]
     public class CheckOutTests

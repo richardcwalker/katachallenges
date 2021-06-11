@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Development\\katachallenges\\CheckOutScanner\\CheckOutScannertests\\CheckOutScannertests.csproj": {}
+    "C:\\Development\\katachallenges\\CheckOutScanner\\CheckOutScannertests\\CheckOutScannerTests.csproj": {}
   },
   "projects": {
-    "C:\\Development\\katachallenges\\CheckOutScanner\\CheckOutScannertests\\CheckOutScannertests.csproj": {
+    "C:\\Development\\katachallenges\\CheckOutScanner\\CheckOutScannertests\\CheckOutScannerTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Development\\katachallenges\\CheckOutScanner\\CheckOutScannertests\\CheckOutScannertests.csproj",
-        "projectName": "CheckOutScannertests",
-        "projectPath": "C:\\Development\\katachallenges\\CheckOutScanner\\CheckOutScannertests\\CheckOutScannertests.csproj",
+        "projectUniqueName": "C:\\Development\\katachallenges\\CheckOutScanner\\CheckOutScannertests\\CheckOutScannerTests.csproj",
+        "projectName": "CheckOutScannerTests",
+        "projectPath": "C:\\Development\\katachallenges\\CheckOutScanner\\CheckOutScannertests\\CheckOutScannerTests.csproj",
         "packagesPath": "C:\\Users\\Festa\\.nuget\\packages\\",
         "outputPath": "C:\\Development\\katachallenges\\CheckOutScanner\\CheckOutScannertests\\obj\\",
         "projectStyle": "PackageReference",
