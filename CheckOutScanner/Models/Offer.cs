@@ -10,7 +10,7 @@ namespace CheckOutScanner.Models
     {
         public string SKU { get; set; }
         public int Quantity { get; set; }
-        public string OfferPrice { get; set; }
+        public Decimal OfferPrice { get; set; }
 
         public Offer()
         {

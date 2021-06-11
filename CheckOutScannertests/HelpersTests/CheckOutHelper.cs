@@ -12,11 +12,11 @@ namespace CheckOutScannertests.HelpersTests
     public class CheckOutHelper
     {
         [Test]
-        public void TestMethod()
+        public void CheckOutHelperConstructorTest()
         {
-            // TODO: Add your test code here
-            var answer = 42;
-            Assert.That(answer, Is.EqualTo(42), "Some useful error message");
+            CheckOutHelper itemHelper = new CheckOutHelper();
+            Assert.IsNotNull(itemHelper);
         }
+
     }
 }

@@ -12,18 +12,10 @@ namespace CheckOutScannertests.HelpersTests
     [TestFixture]
     public class ItemHelperTests
     {
-        //[Test]
-        //public void TestMethod()
-        //{
-        //    // TODO: Add your test code here
-        //    var answer = 42;
-        //    Assert.That(answer, Is.EqualTo(42), "Some useful error message");
-        //}
-
         [Test]
         public void ItemHelpersConstructorTest()
         {
-            ItemHelpers itemHelper = new ItemHelpers();
+            ItemHelper itemHelper = new ItemHelper();
             Assert.IsNotNull(itemHelper);
         }
     }

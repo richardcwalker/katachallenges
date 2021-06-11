@@ -10,9 +10,9 @@ namespace CheckOutScanner.Helpers
     /// <summary>
     /// Helper for items 
     /// </summary>
-    public class ItemHelpers
+    public class ItemHelper
     {
-        public ItemHelpers()
+        public ItemHelper()
         {
             
         }

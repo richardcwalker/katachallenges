@@ -10,7 +10,7 @@ namespace CheckOutScanner.BusinessLogic
         }
         public void Scan(Item item)
         {
-
+            
         }
 
         public Item AddItem(Item itemAdded)
