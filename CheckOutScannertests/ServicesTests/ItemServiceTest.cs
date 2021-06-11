@@ -50,9 +50,9 @@ namespace CheckOutScannerTests.ServicesTests
             {
                 SKU = INVALID_SKU_ID
             };
-            bool itemCostTable = itemService.AddItem(item);
+            isSKUOnSystem = itemService.AddItem(item);
 
-            Assert.IsTrue(true);
+            Assert.IsFalse(isSKUOnSystem);
         }
 
         [Test]
@@ -63,9 +63,9 @@ namespace CheckOutScannerTests.ServicesTests
             {
                 SKU = VALID_SKU_ID_A99
             };
-            bool itemCostTable = itemService.AddItem(item1);
+            isSKUOnSystem = itemService.AddItem(item1);
 
-            Assert.IsTrue(true);
+            Assert.IsTrue(isSKUOnSystem);
         }
 
 

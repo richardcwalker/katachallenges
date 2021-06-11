@@ -9,9 +9,11 @@ namespace CheckOutScanner.Services
 {
     public class ItemService : ServicesBase
     {
+        private IDictionary<string, decimal> ItemCostPriceTable;
+
         public ItemService()
         {
-
+            ItemCostPriceTable = BuildItemCostPriceTable();
         }
 
         /// <summary>
@@ -25,14 +27,40 @@ namespace CheckOutScanner.Services
 
         public bool AddItem(Item item)
         {
+            //Get the latest cost prices
+
+            
             if (item != null)
             {
-                return true;
-                //Some processing logging..
+                //Is this a valid SKU
+                try
+                {
+                    if (ItemCostPriceTable.ContainsKey(item.SKU))
+                    {
+                        item.UnitPrice = ItemCostPriceTable[item.SKU];
+                        SaveRunningTotal(item);
+                        return true;
+                    }
+                    else
+                    {
+                        // No key found    
+                        // Some error logging with 'Missing SKU' error message
+                        return false;
+
+                    }
+                        
+                    
+                }
+                catch (Exception)
+                {
+                    // No key found    
+                    // Some error logging with exception details
+                    return false;
+                }
             }
             else
             {
-                //Some error logging..
+                // Some error logging with 'No item passed to scan' error
                 return false;
             }
         }
@@ -50,6 +78,11 @@ namespace CheckOutScanner.Services
             ItemPriceTable.Add("C40", 0.60M);
 
             return ItemPriceTable;
+        }
+
+        private RunningTotal SaveRunningTotal(Item scannedItem)
+        {
+            return null;
         }
     }
 }

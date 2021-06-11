@@ -8,7 +8,7 @@ namespace CheckOutScanner.Models
 {
     public class RunningTotal : ModelsBase
     {
-        public decimal Total()
+        public decimal TotalPrice()
         {
             return 0m;
         }
