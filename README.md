@@ -1,2 +1,2 @@
-# katachallenges
-Coding Katas
+# katacheckoutscanner
+TO DO..
