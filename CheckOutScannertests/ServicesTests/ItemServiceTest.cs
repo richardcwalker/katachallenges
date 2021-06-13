@@ -25,6 +25,21 @@ namespace CheckOutScannerTests.ServicesTests
     [TestFixture]
     public class ItemServiceTest : TestBase
     {
+        public int ItemCount { get; set; }
+        [SetUp] 
+        public void SomeClassSetUp()
+        {
+            ItemCount = 0;
+
+
+        }
+
+        [TearDown]
+        public void SomeTearDown()
+        {
+
+        }
+
         [Test]
         public void ItemServiceTestConstructorTest()
         {
