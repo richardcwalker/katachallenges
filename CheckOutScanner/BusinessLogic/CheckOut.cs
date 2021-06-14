@@ -13,10 +13,10 @@ namespace CheckOutScanner.BusinessLogic
         /// <summary>
         /// Scanner would pass each item and return true to the UI if Ok else false.
         /// </summary>
-        /// <param name="item"></param>
-        public bool Scan(Item item)
+        /// <param name="SKUBeingScanned"></param>
+        public bool Scan(string SKUBeingScanned)
         {
-            return itemHelper.AddItem(item);
+            return itemHelper.AddItem(SKUBeingScanned);
         }
 
         /// <summary>

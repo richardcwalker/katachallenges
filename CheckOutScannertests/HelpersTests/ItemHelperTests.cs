@@ -38,7 +38,7 @@ namespace CheckOutScannertests.HelpersTests
             item.SKU = "A99";
             item.UnitPrice = 0.05m;
             ItemHelper itemHelper = new ItemHelper(new ItemService());
-            Assert.IsTrue(itemHelper.AddItem(item));
+            Assert.IsTrue(itemHelper.AddItem(VALID_SKU_ID_A99));
         }
     }
 }

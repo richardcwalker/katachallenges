@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CheckOutScanner.Services
 {
-    public class ItemService : ServicesBase
+    public class ItemService : ServicesBase, IService
     {
         private IDictionary<string, decimal> ItemCostPriceTable;
 
@@ -25,42 +25,47 @@ namespace CheckOutScanner.Services
             return BuildItemCostPriceTable();
         }
 
-        public bool AddItem(Item item)
+        /// <summary>
+        /// Add the scanned item to our array of items
+        /// </summary>
+        /// <param name="SKUBeingScanned"></param>
+        /// <returns></returns>
+        public bool AddScannedItem(string SKUBeingScanned)
         {
-            //Get the latest cost prices
-
-            
-            if (item != null)
+            if (!string.IsNullOrEmpty(SKUBeingScanned))
             {
                 //Is this a valid SKU
                 try
                 {
-                    if (ItemCostPriceTable.ContainsKey(item.SKU))
+                    if (ItemCostPriceTable.ContainsKey(SKUBeingScanned))
                     {
-                        item.UnitPrice = ItemCostPriceTable[item.SKU];
-                        SaveRunningTotal(item);
+                        Item item = new Item
+                        {
+                            UnitPrice = ItemCostPriceTable[SKUBeingScanned]
+                        };
+                        SaveScannedItem(item);
                         return true;
                     }
                     else
                     {
                         // No key found    
-                        // Some error logging with 'Missing SKU' error message
+                        HandleServiceError(001, SKU_NOTFOUND_MESSAGE_001, SKUBeingScanned);
                         return false;
-
                     }
-                        
-                    
+
+
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
-                    // No key found    
-                    // Some error logging with exception details
+                    // Unhandled exception error logging with exception details
+                    HandleServiceError(999, SYSTEM_EXCEPTION_999 + "--->" + e.Message, SKUBeingScanned);
                     return false;
                 }
             }
             else
             {
-                // Some error logging with 'No item passed to scan' error
+                // Some error logging with 'Missing SKU' error message
+                HandleServiceError(001, SKU_NOTSUPPLIED_MESSAGE_002, SKUBeingScanned);
                 return false;
             }
         }
@@ -80,9 +85,24 @@ namespace CheckOutScanner.Services
             return ItemPriceTable;
         }
 
-        private RunningTotal SaveRunningTotal(Item scannedItem)
+        /// <summary>
+        /// Get and save the scannd item
+        /// </summary>
+        /// <param name="scannedItem"></param>
+        /// <returns></returns>
+        private RunningTotal SaveScannedItem(Item scannedItem)
         {
             return null;
         }
+
+        /// <summary>
+        /// Request a total
+        /// </summary>
+        /// <param name="arrayOfScannedItems"></param>
+        /// <returns></returns>
+        private void GetTotalPrice(string arrayOfScannedItems)
+        {
+        }
+
     }
 }

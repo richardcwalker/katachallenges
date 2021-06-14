@@ -56,16 +56,32 @@ namespace CheckOutScannerTests.ServicesTests
             Assert.IsTrue(true);
         }
 
+        [Test]
+        public void PassNullSKU()
+        {
+            ItemService itemService = new ItemService();
+
+            isSKUOnSystem = itemService.AddScannedItem(null);
+
+            Assert.IsFalse(isSKUOnSystem);
+        }
+
+        [Test]
+        public void PassEmptySKU()
+        {
+            ItemService itemService = new ItemService();
+
+            isSKUOnSystem = itemService.AddScannedItem(EMPTY_SKU_ID);
+
+            Assert.IsFalse(isSKUOnSystem);
+        }
 
         [Test]
         public void AddInValidItemScanned()
         {
             ItemService itemService = new ItemService();
-            Item item = new()
-            {
-                SKU = INVALID_SKU_ID
-            };
-            isSKUOnSystem = itemService.AddItem(item);
+            
+            isSKUOnSystem = itemService.AddScannedItem(INVALID_SKU_ID);
 
             Assert.IsFalse(isSKUOnSystem);
         }
@@ -74,11 +90,7 @@ namespace CheckOutScannerTests.ServicesTests
         public void AddValidItemScanned()
         {
             ItemService itemService = new ItemService();
-            Item item1 = new()
-            {
-                SKU = VALID_SKU_ID_A99
-            };
-            isSKUOnSystem = itemService.AddItem(item1);
+            isSKUOnSystem = itemService.AddScannedItem(VALID_SKU_ID_A99);
 
             Assert.IsTrue(isSKUOnSystem);
         }

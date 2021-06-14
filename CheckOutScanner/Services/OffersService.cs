@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CheckOutScanner.Services
 {
-    public class OffersService : ServicesBase
+    public class OffersService : ServicesBase, IService
     {
         public OffersService()
         {
@@ -37,6 +37,8 @@ namespace CheckOutScanner.Services
 
             return OfferPriceTable;
         }
+
+        
 
     }
 }
