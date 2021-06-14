@@ -13,6 +13,7 @@ namespace CheckOutScannertests.HelpersTests
     public class CheckOutHelperTests : TestBase
     {
         [Test]
+        [Ignore("To implement")]
         public void CheckOutHelperConstructorTest()
         {
             CheckOutHelperTests itemHelper = new CheckOutHelperTests();

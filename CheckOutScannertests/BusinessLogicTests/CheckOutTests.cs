@@ -13,6 +13,7 @@ namespace CheckOutScannerTests.BusinessLogicTests
     public class CheckOutTests : TestBase
     {
         [Test]
+        [Ignore("To implement")]
         public void CheckOutConstructorTest()
         {
             Checkout checkOut = new Checkout();

@@ -15,9 +15,8 @@ namespace CheckOutScannertests.HelpersTests
     [TestFixture]
     public class ItemHelperTests : TestBase
     {
-        private ItemHelper itemHelper;
-
         [Test]
+        [Ignore("To implement")]
         public void ItemHelpersConstructorTest()
         {
             ItemHelper itemHelper = new ItemHelper(new ItemService());
@@ -25,6 +24,7 @@ namespace CheckOutScannertests.HelpersTests
         }
 
         [Test]
+        [Ignore("To implement")]
         public void AddItemErrorTest()
         {
             ItemHelper itemHelper = new ItemHelper(new ItemService());
@@ -32,6 +32,7 @@ namespace CheckOutScannertests.HelpersTests
         }
 
         [Test]
+        [Ignore("To implement")]
         public void AddOneItemTest()
         {
             Item item = new Item();

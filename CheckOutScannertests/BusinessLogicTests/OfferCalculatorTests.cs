@@ -13,6 +13,7 @@ namespace CheckOutScannerTests.BusinessLogicTests
     public class OfferCalculatorTests : TestBase
     {
         [Test]
+        [Ignore("To implement")]
         public void OfferCalculatorConstructorTest()
         {
             OfferCalculator offerCalculator = new OfferCalculator();

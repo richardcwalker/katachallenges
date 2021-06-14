@@ -32,7 +32,7 @@ namespace CheckOutScanner.Services
         /// <param name="error"></param>
         private void LogError(Error error)
         {
-            ErrorHandlingService errorHandler = new ErrorHandlingService();
+            ErrorHandlingService errorHandler = new();
             errorHandler.LogError(error);
         }
     }

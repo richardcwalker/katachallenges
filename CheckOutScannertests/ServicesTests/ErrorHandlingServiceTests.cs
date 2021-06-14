@@ -13,6 +13,7 @@ namespace CheckOutScannerTests.ServicesTests
     public class ErrorHandlingServiceTests : TestBase
     {
         [Test]
+        [Ignore("To implement")]
         public void ErrorHandlingServiceConstructorTest()
         {
             ErrorHandlingService errorHandlingService = new ErrorHandlingService();

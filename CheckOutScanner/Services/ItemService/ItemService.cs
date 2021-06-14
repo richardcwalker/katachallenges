@@ -1,4 +1,6 @@
-﻿using CheckOutScanner.Models;
+﻿using CheckOutScanner.DataAccessLayer;
+using CheckOutScanner.Models;
+using CheckOutScanner.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,22 +9,17 @@ using System.Threading.Tasks;
 
 namespace CheckOutScanner.Services
 {
-    public class ItemService : ServicesBase, IService
+    public class ItemService : ServicesBase, IService, IItemService
     {
         private IDictionary<string, decimal> ItemCostPriceTable;
+        private List<Item> ItemCostPriceList;
+        private ItemScannerDAL _itemScannerDAL;
 
         public ItemService()
         {
-            ItemCostPriceTable = BuildItemCostPriceTable();
-        }
-
-        /// <summary>
-        /// Get the price table for our items
-        /// </summary>
-        /// <returns>A table of prices (SKU and cost)</returns>
-        public IDictionary <string, decimal> GetItemCostPriceTable()
-        {
-            return BuildItemCostPriceTable();
+            _itemScannerDAL = new ItemScannerDAL();
+            ItemCostPriceTable = _itemScannerDAL.BuildItemCostPriceTable();
+            ItemCostPriceList = _itemScannerDAL.BuildItemCostPriceList();
         }
 
         /// <summary>
@@ -39,7 +36,7 @@ namespace CheckOutScanner.Services
                 {
                     if (ItemCostPriceTable.ContainsKey(SKUBeingScanned))
                     {
-                        Item item = new Item
+                        Item item = new()
                         {
                             UnitPrice = ItemCostPriceTable[SKUBeingScanned]
                         };
@@ -71,38 +68,26 @@ namespace CheckOutScanner.Services
         }
 
         /// <summary>
-        /// Load price table for our items
+        /// Request a total applying discounts
         /// </summary>
-        /// <returns>A table of prices (SKU and cost)</returns>
-        private IDictionary<string, decimal> BuildItemCostPriceTable()
+        /// <param name="arrayOfScannedItems"></param>
+        /// <returns></returns>
+        public Decimal GetTotalPriceOfItems(string transactionID)
         {
-            Dictionary<string, decimal> ItemPriceTable = new Dictionary<string, decimal>();
-            //TODO Refactor into DAL
-            ItemPriceTable.Add("A99", 0.50M);
-            ItemPriceTable.Add("B15", 0.30M);
-            ItemPriceTable.Add("C40", 0.60M);
-
-            return ItemPriceTable;
+            return 0M;
         }
 
         /// <summary>
         /// Get and save the scannd item
+        /// Adds scanned item to our ongoing list of scanned items
         /// </summary>
         /// <param name="scannedItem"></param>
         /// <returns></returns>
-        private RunningTotal SaveScannedItem(Item scannedItem)
+        private void SaveScannedItem(Item scannedItem)
         {
-            return null;
-        }
+            _itemScannerDAL.AddItemScanned(scannedItem);
 
-        /// <summary>
-        /// Request a total
-        /// </summary>
-        /// <param name="arrayOfScannedItems"></param>
-        /// <returns></returns>
-        private void GetTotalPrice(string arrayOfScannedItems)
-        {
+            // AddItemScanned(scannedItem);
         }
-
     }
 }

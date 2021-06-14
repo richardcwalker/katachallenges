@@ -22,6 +22,7 @@ namespace CheckOutScannerTests.ServicesTests
         }
 
         [Test]
+        [Ignore("To implement")]
         public void CheckOutServiceScan()
         {
             //Helper -> Service

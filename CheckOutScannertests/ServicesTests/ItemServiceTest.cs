@@ -30,8 +30,7 @@ namespace CheckOutScannerTests.ServicesTests
         public void SomeClassSetUp()
         {
             ItemCount = 0;
-
-
+            WriteDescription(this.GetType());
         }
 
         [TearDown]
@@ -48,15 +47,7 @@ namespace CheckOutScannerTests.ServicesTests
         }
 
         [Test]
-        public void GetItemCostPriceTable()
-        {
-            ItemService itemService = new ItemService();
-            IDictionary<string, decimal> itemCostTable = itemService.GetItemCostPriceTable();
-
-            Assert.IsTrue(true);
-        }
-
-        [Test]
+        [Category("Invalid Scan")]
         public void PassNullSKU()
         {
             ItemService itemService = new ItemService();
@@ -67,6 +58,7 @@ namespace CheckOutScannerTests.ServicesTests
         }
 
         [Test]
+        [Category("Invalid Scan")]
         public void PassEmptySKU()
         {
             ItemService itemService = new ItemService();
@@ -77,22 +69,47 @@ namespace CheckOutScannerTests.ServicesTests
         }
 
         [Test]
-        public void AddInValidItemScanned()
+        [Description("Test to see if a SKU IS NOT on the system is reported / logged correctly")]
+        [Category("Invalid Scan")]
+        public void ScanSKUNotOnSystem()
         {
             ItemService itemService = new ItemService();
             
             isSKUOnSystem = itemService.AddScannedItem(INVALID_SKU_ID);
 
-            Assert.IsFalse(isSKUOnSystem);
+            Assert.IsFalse(isSKUOnSystem, "SKU exists. This test is needed to check for MISSING SKUs on the system");
         }
 
         [Test]
-        public void AddValidItemScanned()
+        [Description("Add a single valid SKU")]
+        [Category("Valid Scan")]
+        public void ScanValidSKU()
         {
             ItemService itemService = new ItemService();
             isSKUOnSystem = itemService.AddScannedItem(VALID_SKU_ID_A99);
+            Assert.IsTrue(isSKUOnSystem);
+        }
+
+        [Test]
+        [Description("Add multiple valid SKUs")]
+        [Category("Valid Scan")]
+        public void ScanMultipleValidSKU()
+        {
+            ItemService itemService = new ItemService();
+            isSKUOnSystem = itemService.AddScannedItem(VALID_SKU_ID_A99);
+            isSKUOnSystem = itemService.AddScannedItem(VALID_SKU_ID_B15);
+            isSKUOnSystem = itemService.AddScannedItem(VALID_SKU_ID_C40);
 
             Assert.IsTrue(isSKUOnSystem);
+        }
+
+        [Test]
+        [Description("Get totals of all out added items / SKUs")]
+        [Category("Valid Totalizer")]
+        public void GetTotalPriceOfItems()
+        {
+            ItemService itemService = new ItemService();
+            decimal totalCost = itemService.GetTotalPriceOfItems("sometrandasctionid");
         }
 
 
