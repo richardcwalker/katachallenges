@@ -11,14 +11,12 @@ namespace CheckOutScanner.Services
 {
     public class ItemService : ServicesBase, IService, IItemService
     {
-        private IDictionary<string, decimal> ItemCostPriceTable;
         private List<Item> ItemCostPriceList;
         private ItemScannerDAL _itemScannerDAL;
 
         public ItemService()
         {
             _itemScannerDAL = new ItemScannerDAL();
-            ItemCostPriceTable = _itemScannerDAL.BuildItemCostPriceTable();
             ItemCostPriceList = _itemScannerDAL.BuildItemCostPriceList();
         }
 
@@ -34,13 +32,9 @@ namespace CheckOutScanner.Services
                 //Is this a valid SKU
                 try
                 {
-                    if (ItemCostPriceTable.ContainsKey(SKUBeingScanned))
+                    if (ItemCostPriceList.Any(cus => cus.SKU == SKUBeingScanned))
                     {
-                        Item item = new()
-                        {
-                            UnitPrice = ItemCostPriceTable[SKUBeingScanned]
-                        };
-                        SaveScannedItem(item);
+                        SaveScannedItem(ItemCostPriceList.First(i => i.SKU == SKUBeingScanned));
                         return true;
                     }
                     else
@@ -86,8 +80,6 @@ namespace CheckOutScanner.Services
         private void SaveScannedItem(Item scannedItem)
         {
             _itemScannerDAL.AddItemScanned(scannedItem);
-
-            // AddItemScanned(scannedItem);
         }
     }
 }

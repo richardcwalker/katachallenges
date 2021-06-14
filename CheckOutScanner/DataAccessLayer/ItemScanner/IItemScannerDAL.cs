@@ -10,6 +10,5 @@ namespace CheckOutScanner.DataAccessLayer.ItemScanner
     public interface IItemScannerDAL
     {
         public List<Item> AddItemScanned(Item itemScanned);
-        public IDictionary<string, decimal> BuildItemCostPriceTable();
     }
 }

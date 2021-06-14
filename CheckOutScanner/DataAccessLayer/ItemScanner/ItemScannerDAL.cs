@@ -18,24 +18,21 @@ namespace CheckOutScanner.DataAccessLayer
             ItemCostPriceList = new();
         }
 
+        /// <summary>
+        /// Add scanned items to list
+        /// </summary>
+        /// <param name="itemScanned"></param>
+        /// <returns></returns>
         public List<Item> AddItemScanned(Item itemScanned)
         {
             ListOfScannedItems.Add(itemScanned);
             return ListOfScannedItems;
         }
 
-        public IDictionary<string, decimal> BuildItemCostPriceTable()
-        {
-            Dictionary<string, decimal> ItemPriceTable = new()
-            {
-                { "A99", 0.50M },
-                { "B15", 0.30M },
-                { "C40", 0.60M }
-            };
-
-            return ItemPriceTable;
-        }
-
+        /// <summary>
+        /// Get the pricing list
+        /// </summary>
+        /// <returns></returns>
         public List<Item> BuildItemCostPriceList()
         {
             ItemCostPriceList.Add(new Item { ProductName = "Apples", SKU = "A99", UnitPrice = 0.5M });
