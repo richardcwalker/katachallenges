@@ -22,7 +22,7 @@ namespace CheckOutScanner.Services.ItemService
         /// </summary>
         /// <param name="SKUBeingScanned"></param>
         /// <returns></returns>
-        public bool AddScannedItem(string SKUBeingScanned)
+        public bool AddScannedItem(Guid TransactionID,string SKUBeingScanned)
         {
             if (!string.IsNullOrEmpty(SKUBeingScanned))
             {
@@ -31,7 +31,7 @@ namespace CheckOutScanner.Services.ItemService
                 {
                     if (ItemCostPriceList.Any(cus => cus.SKU == SKUBeingScanned))
                     {
-                        SaveScannedItem(ItemCostPriceList.First(i => i.SKU == SKUBeingScanned));
+                        SaveScannedItem(TransactionID, ItemCostPriceList.First(i => i.SKU == SKUBeingScanned));
                         return true;
                     }
                     else
@@ -74,9 +74,9 @@ namespace CheckOutScanner.Services.ItemService
         /// </summary>
         /// <param name="scannedItem"></param>
         /// <returns></returns>
-        private void SaveScannedItem(Item scannedItem)
+        private void SaveScannedItem(Guid transactionID, Item scannedItem)
         {
-            _itemScannerDAL.AddItemScanned(scannedItem);
+            _itemScannerDAL.AddItemScanned(transactionID, scannedItem);
         }
     }
 }

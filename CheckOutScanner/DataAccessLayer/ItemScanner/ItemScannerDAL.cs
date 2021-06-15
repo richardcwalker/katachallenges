@@ -23,8 +23,10 @@ namespace CheckOutScanner.DataAccessLayer
         /// </summary>
         /// <param name="itemScanned"></param>
         /// <returns></returns>
-        public List<Item> AddItemScanned(Item itemScanned)
+        public List<Item> AddItemScanned(Guid TransactionID, Item itemScanned)
         {
+            //Set the Item TransactionID
+            itemScanned.TransactionId = TransactionID;
             ListOfScannedItems.Add(itemScanned);
             return ListOfScannedItems;
         }

@@ -13,7 +13,7 @@ namespace CheckOutScanner.Services
         protected const string SKU_NOTFOUND_MESSAGE_001 = "SKU Not Found";
         protected const string SKU_NOTSUPPLIED_MESSAGE_002 = "SKU not supplied by scanner";
         protected const string SYSTEM_EXCEPTION_999 = "System Exception Thrown";
-
+        
 
         protected void HandleServiceError(int ErrorCode, string ErrorMessage, string SKUBeingScanned)
         {

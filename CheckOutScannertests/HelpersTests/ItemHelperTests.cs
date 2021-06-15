@@ -15,6 +15,12 @@ namespace CheckOutScannertests.HelpersTests
     [TestFixture]
     public class ItemHelperTests : TestBase
     {
+        private Guid TransactionId;
+        [SetUp]
+        public void SomeClassSetUp()
+        {
+            TransactionId = new Guid();
+        }
         [Test]
         [Ignore("To implement")]
         public void ItemHelpersConstructorTest()
@@ -28,7 +34,7 @@ namespace CheckOutScannertests.HelpersTests
         public void AddItemErrorTest()
         {
             ItemHelper itemHelper = new ItemHelper(new ItemService());
-            Assert.IsFalse(itemHelper.AddItem(null));
+            Assert.IsFalse(itemHelper.AddItem(TransactionId,null));
         }
 
         [Test]
@@ -39,7 +45,7 @@ namespace CheckOutScannertests.HelpersTests
             item.SKU = "A99";
             item.UnitPrice = 0.05m;
             ItemHelper itemHelper = new ItemHelper(new ItemService());
-            Assert.IsTrue(itemHelper.AddItem(VALID_SKU_ID_A99));
+            Assert.IsTrue(itemHelper.AddItem(TransactionId,VALID_SKU_ID_A99));
         }
     }
 }

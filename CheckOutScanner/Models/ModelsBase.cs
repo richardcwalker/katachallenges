@@ -9,5 +9,6 @@ namespace CheckOutScanner.Models
     public class ModelsBase
     {
         public string SKUBeingScanned { get; set; }
+        public Guid TransactionId;
     }
 }

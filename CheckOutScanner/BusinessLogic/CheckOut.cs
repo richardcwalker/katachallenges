@@ -1,5 +1,6 @@
 ﻿using CheckOutScanner.Helpers;
 using CheckOutScanner.Models;
+using System;
 
 namespace CheckOutScanner.BusinessLogic
 {
@@ -14,9 +15,9 @@ namespace CheckOutScanner.BusinessLogic
         /// Scanner would pass each item and return true to the UI if Ok else false.
         /// </summary>
         /// <param name="SKUBeingScanned"></param>
-        public bool Scan(string SKUBeingScanned)
+        public bool Scan(Guid TransactionID, string SKUBeingScanned)
         {
-            return itemHelper.AddItem(SKUBeingScanned);
+            return itemHelper.AddItem(TransactionID, SKUBeingScanned);
         }
 
         /// <summary>

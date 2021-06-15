@@ -19,11 +19,11 @@ namespace CheckOutScanner.Helpers
             _itemService = itemService;
         }
 
-        public bool AddItem(string SKUBeingScanned)
+        public bool AddItem(Guid TransactionID, string SKUBeingScanned)
         {
             if (SKUBeingScanned != null)
             {
-                return _itemService.AddScannedItem(SKUBeingScanned);
+                return _itemService.AddScannedItem(TransactionID,SKUBeingScanned);
                 //Some processing logging..
             }
             else
