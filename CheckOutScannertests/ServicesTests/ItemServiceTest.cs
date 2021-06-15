@@ -143,6 +143,48 @@ namespace CheckOutScannerTests.ServicesTests
         }
 
         [Test]
+        [Description("Two biscuits, one carrot, one biscuit should equal 1.05")]
+        [Category("Valid Totalizer")]
+        public void TwoBiscuitsOneCarrotOneMoreBiscuit()
+        {
+            ItemService itemService = new ItemService();
+            isSKUOnSystem = itemService.AddScannedItem(TransactionId, VALID_SKU_ID_B15);
+            isSKUOnSystem = itemService.AddScannedItem(TransactionId, VALID_SKU_ID_B15); //.45 
+            isSKUOnSystem = itemService.AddScannedItem(TransactionId, VALID_SKU_ID_C40); //.6
+            isSKUOnSystem = itemService.AddScannedItem(TransactionId, VALID_SKU_ID_B15); //.30
+            decimal totalCost = itemService.GetTotalPriceOfItems(transactionID: TransactionId);
+            Assert.AreEqual(1.35, totalCost);
+        }
+
+        [Test]
+        [Description("Four biscuits and one carrot should equal 1.50(carrot scanned in the middle)")]
+        [Category("Valid Totalizer")]
+        public void OneBiscuitOneAppleOneBiscuitScenarioForSpec()
+        {
+            ItemService itemService = new ItemService();
+            isSKUOnSystem = itemService.AddScannedItem(TransactionId, VALID_SKU_ID_B15);
+            isSKUOnSystem = itemService.AddScannedItem(TransactionId, VALID_SKU_ID_A99); 
+            isSKUOnSystem = itemService.AddScannedItem(TransactionId, VALID_SKU_ID_B15);
+            decimal totalCost = itemService.GetTotalPriceOfItems(transactionID: TransactionId);
+            Assert.AreEqual(0.95, totalCost);
+        }
+
+        [Test]
+        [Description("Four biscuits and one carrot should equal 1.50(carrot scanned in the middle)")]
+        [Category("Valid Totalizer")]
+        public void TwoPairsOfBiscuitsOffered()
+        {
+            ItemService itemService = new ItemService();
+            isSKUOnSystem = itemService.AddScannedItem(TransactionId, VALID_SKU_ID_B15);
+            isSKUOnSystem = itemService.AddScannedItem(TransactionId, VALID_SKU_ID_B15); //.45 
+            isSKUOnSystem = itemService.AddScannedItem(TransactionId, VALID_SKU_ID_C40); //.6
+            isSKUOnSystem = itemService.AddScannedItem(TransactionId, VALID_SKU_ID_B15);
+            isSKUOnSystem = itemService.AddScannedItem(TransactionId, VALID_SKU_ID_B15); //.45 
+            decimal totalCost = itemService.GetTotalPriceOfItems(transactionID: TransactionId);
+            Assert.AreEqual(1.50, totalCost);
+        }
+
+        [Test]
         [Description("Carrots not on offer so scan 4 and return total of 1.80")]
         [Category("Valid Totalizer")]
         public void CarrotsNoOffer()
