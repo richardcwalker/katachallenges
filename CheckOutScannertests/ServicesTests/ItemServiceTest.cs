@@ -90,7 +90,7 @@ namespace CheckOutScannerTests.ServicesTests
         [Test]
         [Description("Add multiple valid SKUs")]
         [Category("Valid Scan")]
-        public void ScanMultipleSKUsAndScan()
+        public void ScanMultipleSKUs()
         {
             ItemService itemService = new ItemService();
             isSKUOnSystem = itemService.AddScannedItem(TransactionId, VALID_SKU_ID_C40);
@@ -106,7 +106,7 @@ namespace CheckOutScannerTests.ServicesTests
         [Test]
         [Description("Get totals of 4 apples. We should return 1.80 as the total (1.30 offer for 3 and one apple at 0.5)")]
         [Category("Valid Totalizer")]
-        public void ApplesForOfferWithOneFullPrice()
+        public void ScanApplesReturnOfferValuePlusOneFullPrice()
         {
             ItemService itemService = new ItemService();
             isSKUOnSystem = itemService.AddScannedItem(TransactionId, VALID_SKU_ID_A99);
@@ -140,6 +140,19 @@ namespace CheckOutScannerTests.ServicesTests
             isSKUOnSystem = itemService.AddScannedItem(TransactionId, VALID_SKU_ID_C40); //.6
             decimal totalCost = itemService.GetTotalPriceOfItems(transactionID: TransactionId);
             Assert.AreEqual(1.05, totalCost);
+        }
+
+        [Test]
+        [Description("Carrots not on offer so scan 4 and return total of 1.80")]
+        [Category("Valid Totalizer")]
+        public void CarrotsNoOffer()
+        {
+            ItemService itemService = new ItemService();
+            isSKUOnSystem = itemService.AddScannedItem(TransactionId, VALID_SKU_ID_C40); //.6
+            isSKUOnSystem = itemService.AddScannedItem(TransactionId, VALID_SKU_ID_C40); //.6
+            isSKUOnSystem = itemService.AddScannedItem(TransactionId, VALID_SKU_ID_C40); //.6
+            decimal totalCost = itemService.GetTotalPriceOfItems(transactionID: TransactionId);
+            Assert.AreEqual(1.80, totalCost);
         }
     }
 }

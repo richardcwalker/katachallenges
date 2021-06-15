@@ -91,12 +91,12 @@ namespace CheckOutScanner.Services.ItemService
         private decimal GetTotalPriceForSKUs(List<Item> allScannedItems)
         {
             foreach (var item in from item in allScannedItems
-                                 where item.SKU != SKU
                                  select item)
             {
                 //Get any offers and store the totals for these
+
                 GetAnyOffers(allScannedItems, item);
-                SKU = item.SKU;
+
                 runningTotal = runningTotal + singleUnitPriceTotal + offerPriceTotal;
                 singleUnitPriceTotal = 0;
                 offerPriceTotal = 0;
@@ -117,27 +117,29 @@ namespace CheckOutScanner.Services.ItemService
             //Check the SKU is on the offers table before doing anything
             if (offerCostTable.ContainsKey(item.SKU))
             {
-                //Loop round offers table and check the scanned items array then apply totals
-                foreach ((KeyValuePair<string, Offer> offer, int offersCountForThisSKU) in
-                                    from offer in offerCostTable
-                                    select (offer, offersCountForThisSKU))
+                if (SKU != item.SKU)
                 {
-                    if (offer.Value.SKU == item.SKU)
+                    foreach ((KeyValuePair<string, Offer> offer, int offersCountForThisSKU) in
+                                  from offer in offerCostTable
+                                  select (offer, offersCountForThisSKU))
                     {
+                        if (offer.Value.SKU == item.SKU)
                         {
-                            numberOfOffersApplied = Math.DivRem(allScannedItems.Count(c => c.SKU == offer.Key), offer.Value.Quantity, out remainder);
-                            //Get offer total
-                            offerPriceTotal = numberOfOffersApplied * offer.Value.OfferPrice;
-                            //Any remaining items charged at normal price
-                            if (remainder > 0)
                             {
-                                //Get SKU cost price to add the remaining non-offered item
-                                singleUnitPriceTotal = remainder * item.UnitPrice;
+                                numberOfOffersApplied = Math.DivRem(allScannedItems.Count(c => c.SKU == offer.Key), offer.Value.Quantity, out remainder);
+                                //Get offer total
+                                offerPriceTotal = numberOfOffersApplied * offer.Value.OfferPrice;
+                                //Any remaining items charged at normal price
+                                if (remainder > 0)
+                                {
+                                    //Get SKU cost price to add the remaining non-offered item
+                                    singleUnitPriceTotal = remainder * item.UnitPrice;
+                                }
                             }
+
                         }
 
                     }
-
                 }
             }
             else
@@ -145,6 +147,7 @@ namespace CheckOutScanner.Services.ItemService
                 //Item SKU not on offer so just add the UnitPrice
                 singleUnitPriceTotal = singleUnitPriceTotal + item.UnitPrice;
             }
+            SKU = item.SKU;
         }
 
 
