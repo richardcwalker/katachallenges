@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CheckOutScanner.Services
+namespace CheckOutScanner.Services.ErrorHandlingService
 {
-    public class ErrorHandlingService : IService
+    public class ErrorHandlingService : IErrorHandlingService
     {
         public ErrorHandlingService()
         {

@@ -1,15 +1,12 @@
 ﻿using CheckOutScanner.DataAccessLayer;
 using CheckOutScanner.Models;
-using CheckOutScanner.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace CheckOutScanner.Services
+namespace CheckOutScanner.Services.ItemService
 {
-    public class ItemService : ServicesBase, IService, IItemService
+    public class ItemService : ServicesBase, IItemService
     {
         private List<Item> ItemCostPriceList;
         private ItemScannerDAL _itemScannerDAL;

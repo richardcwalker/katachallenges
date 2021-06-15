@@ -1,4 +1,5 @@
 ﻿using CheckOutScanner.Services;
+using CheckOutScanner.Services.ErrorHandlingService;
 using NUnit.Framework;
 using System;
 using System.Collections;

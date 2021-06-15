@@ -1,5 +1,6 @@
 ﻿using CheckOutScanner.Models;
 using CheckOutScanner.Services;
+using CheckOutScanner.Services.OffersService;
 using System;
 using System.Collections.Generic;
 using System.Linq;

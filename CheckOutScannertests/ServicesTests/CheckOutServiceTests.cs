@@ -1,5 +1,5 @@
 ﻿using CheckOutScanner.Helpers;
-using CheckOutScanner.Services;
+using CheckOutScanner.Services.CheckOutService;
 using NUnit.Framework;
 using System;
 using System.Collections;

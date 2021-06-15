@@ -1,6 +1,6 @@
 ﻿using CheckOutScanner.Helpers;
 using CheckOutScanner.Models;
-using CheckOutScanner.Services;
+using CheckOutScanner.Services.ItemService;
 using CheckOutScannerTests;
 using NUnit.Framework;
 using System;

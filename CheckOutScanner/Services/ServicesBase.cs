@@ -1,4 +1,5 @@
 ﻿using CheckOutScanner.Models;
+using CheckOutScanner.Services.ErrorHandlingService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,7 +33,7 @@ namespace CheckOutScanner.Services
         /// <param name="error"></param>
         private void LogError(Error error)
         {
-            ErrorHandlingService errorHandler = new();
+            ErrorHandlingService.ErrorHandlingService errorHandler = new();
             errorHandler.LogError(error);
         }
     }

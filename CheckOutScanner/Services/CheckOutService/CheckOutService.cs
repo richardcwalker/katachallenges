@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CheckOutScanner.Services
+namespace CheckOutScanner.Services.CheckOutService
 {
-    public class CheckOutService: ServicesBase, IService
+    public class CheckOutService: ServicesBase, ICheckOutService
     {
         public CheckOutService()
         {
