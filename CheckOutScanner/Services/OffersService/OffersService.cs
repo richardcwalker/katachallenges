@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CheckOutScanner.Services.OffersService
+namespace CheckOutScanner.Services.Offers
 {
     public class OffersService : ServicesBase, IOffersService
     {

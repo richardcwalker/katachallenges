@@ -10,5 +10,6 @@ namespace CheckOutScanner.DataAccessLayer.ItemScanner
     public interface IItemScannerDAL
     {
         public List<Item> AddItemScanned(Guid TransactionID, Item itemScanned);
+        public List<Item> GetAllScannedItems(Guid transactionID);
     }
 }

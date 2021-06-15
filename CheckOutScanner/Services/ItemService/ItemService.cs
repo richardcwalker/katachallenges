@@ -1,4 +1,5 @@
 ﻿using CheckOutScanner.DataAccessLayer;
+using CheckOutScanner.Services.Offers;
 using CheckOutScanner.Models;
 using System;
 using System.Collections.Generic;
@@ -10,10 +11,18 @@ namespace CheckOutScanner.Services.ItemService
     {
         private List<Item> ItemCostPriceList;
         private ItemScannerDAL _itemScannerDAL;
-
+        private OffersService _offersService;
+        private int numberOfOffersApplied = 0;
+        private int remainder;
+        private decimal runningTotal;
+        private decimal offerPriceTotal;
+        private decimal singleUnitPriceTotal;
+        private string SKU;
+        private int offersCountForThisSKU;
         public ItemService()
         {
             _itemScannerDAL = new ItemScannerDAL();
+            _offersService = new OffersService();
             ItemCostPriceList = _itemScannerDAL.BuildItemCostPriceList();
         }
 
@@ -22,7 +31,7 @@ namespace CheckOutScanner.Services.ItemService
         /// </summary>
         /// <param name="SKUBeingScanned"></param>
         /// <returns></returns>
-        public bool AddScannedItem(Guid TransactionID,string SKUBeingScanned)
+        public bool AddScannedItem(Guid TransactionID, string SKUBeingScanned)
         {
             if (!string.IsNullOrEmpty(SKUBeingScanned))
             {
@@ -61,12 +70,83 @@ namespace CheckOutScanner.Services.ItemService
         /// <summary>
         /// Request a total applying discounts
         /// </summary>
-        /// <param name="arrayOfScannedItems"></param>
+        /// <param name="transactionID"></param>
         /// <returns></returns>
-        public Decimal GetTotalPriceOfItems(string transactionID)
+        public Decimal GetTotalPriceOfItems(Guid transactionID)
         {
-            return 0M;
+            //Get items and sort by SKU
+            List<Item> allScannedItems = new List<Item>();
+            allScannedItems = _itemScannerDAL.GetAllScannedItems(transactionID);
+            //Get Offers
+            IDictionary<string, Offer> offerCostTable = _offersService.GetOffersPriceTable();
+            return GetTotalPriceForSKUs(allScannedItems);
+
         }
+
+        /// <summary>
+        /// Calc the total price
+        /// </summary>
+        /// <param name="allScannedItems"></param>
+        /// <returns></returns>
+        private decimal GetTotalPriceForSKUs(List<Item> allScannedItems)
+        {
+            foreach (var item in from item in allScannedItems
+                                 where item.SKU != SKU
+                                 select item)
+            {
+                //Get any offers and store the totals for these
+                GetAnyOffers(allScannedItems, item);
+                SKU = item.SKU;
+                runningTotal = runningTotal + singleUnitPriceTotal + offerPriceTotal;
+                singleUnitPriceTotal = 0;
+                offerPriceTotal = 0;
+
+            }
+            return runningTotal;
+        }
+
+        /// <summary>
+        /// Count SKUs in List and see if these have offers (quantity from offers table)
+        /// </summary>
+        /// <param name="allScannedItems"></param>
+        /// <param name="offerCostTable"></param>
+        /// <param name="item"></param>
+        private void GetAnyOffers(List<Item> allScannedItems, Item item)
+        {
+            IDictionary<string, Offer> offerCostTable = _offersService.GetOffersPriceTable();
+            //Check the SKU is on the offers table before doing anything
+            if (offerCostTable.ContainsKey(item.SKU))
+            {
+                //Loop round offers table and check the scanned items array then apply totals
+                foreach ((KeyValuePair<string, Offer> offer, int offersCountForThisSKU) in
+                                    from offer in offerCostTable
+                                    select (offer, offersCountForThisSKU))
+                {
+                    if (offer.Value.SKU == item.SKU)
+                    {
+                        {
+                            numberOfOffersApplied = Math.DivRem(allScannedItems.Count(c => c.SKU == offer.Key), offer.Value.Quantity, out remainder);
+                            //Get offer total
+                            offerPriceTotal = numberOfOffersApplied * offer.Value.OfferPrice;
+                            //Any remaining items charged at normal price
+                            if (remainder > 0)
+                            {
+                                //Get SKU cost price to add the remaining non-offered item
+                                singleUnitPriceTotal = remainder * item.UnitPrice;
+                            }
+                        }
+
+                    }
+
+                }
+            }
+            else
+            {
+                //Item SKU not on offer so just add the UnitPrice
+                singleUnitPriceTotal = singleUnitPriceTotal + item.UnitPrice;
+            }
+        }
+
 
         /// <summary>
         /// Get and save the scannd item

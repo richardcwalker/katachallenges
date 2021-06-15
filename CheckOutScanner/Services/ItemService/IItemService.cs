@@ -8,8 +8,8 @@ namespace CheckOutScanner.Services
 {
     public interface IItemService
     {
-        public bool AddScannedItem(Guid TransactionID, string SKUBeingScanned);
-        public Decimal GetTotalPriceOfItems(string transactionID);
+        public bool AddScannedItem(Guid transactionID, string SKUBeingScanned);
+        public Decimal GetTotalPriceOfItems(Guid transactionID);
 
     }
 }

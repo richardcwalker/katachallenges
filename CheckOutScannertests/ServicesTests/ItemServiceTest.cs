@@ -100,24 +100,46 @@ namespace CheckOutScannerTests.ServicesTests
             isSKUOnSystem = itemService.AddScannedItem(TransactionId, VALID_SKU_ID_A99);
             isSKUOnSystem = itemService.AddScannedItem(TransactionId, VALID_SKU_ID_B15);
             isSKUOnSystem = itemService.AddScannedItem(TransactionId, VALID_SKU_ID_C40);
-
             Assert.IsTrue(isSKUOnSystem);
         }
 
-        //[Test]
-        //[Description("Get totals of all out added items / SKUs")]
-        //[Category("Valid Totalizer")]
-        //public void ScanMultipleSKUsScanAndRequestTotal()
-        //{
-        //    ItemService itemService = new ItemService();
-        //    isSKUOnSystem = itemService.AddScannedItem(TransactionId, VALID_SKU_ID_C40);
-        //    isSKUOnSystem = itemService.AddScannedItem(TransactionId, VALID_SKU_ID_A99);
-        //    isSKUOnSystem = itemService.AddScannedItem(TransactionId, VALID_SKU_ID_B15);
-        //    isSKUOnSystem = itemService.AddScannedItem(TransactionId, VALID_SKU_ID_A99);
-        //    isSKUOnSystem = itemService.AddScannedItem(TransactionId, VALID_SKU_ID_A99);
-        //    isSKUOnSystem = itemService.AddScannedItem(TransactionId, VALID_SKU_ID_B15);
-        //    isSKUOnSystem = itemService.AddScannedItem(TransactionId, VALID_SKU_ID_C40);
-        //    decimal totalCost = itemService.GetTotalPriceOfItems("sometrandasctionid");
-        //}
+        [Test]
+        [Description("Get totals of 4 apples. We should return 1.80 as the total (1.30 offer for 3 and one apple at 0.5)")]
+        [Category("Valid Totalizer")]
+        public void ApplesForOfferWithOneFullPrice()
+        {
+            ItemService itemService = new ItemService();
+            isSKUOnSystem = itemService.AddScannedItem(TransactionId, VALID_SKU_ID_A99);
+            isSKUOnSystem = itemService.AddScannedItem(TransactionId, VALID_SKU_ID_A99);
+            isSKUOnSystem = itemService.AddScannedItem(TransactionId, VALID_SKU_ID_A99);
+            isSKUOnSystem = itemService.AddScannedItem(TransactionId, VALID_SKU_ID_A99);
+            decimal totalCost = itemService.GetTotalPriceOfItems(transactionID: TransactionId);
+            Assert.AreEqual(1.80, totalCost);
+        }
+
+        [Test]
+        [Description("Get totals of 2 apples. We should return 1.00 as the total")]
+        [Category("Valid Totalizer")]
+        public void ApplesNoOffer()
+        {
+            ItemService itemService = new ItemService();
+            isSKUOnSystem = itemService.AddScannedItem(TransactionId, VALID_SKU_ID_A99);
+            isSKUOnSystem = itemService.AddScannedItem(TransactionId, VALID_SKU_ID_A99);
+            decimal totalCost = itemService.GetTotalPriceOfItems(transactionID: TransactionId);
+            Assert.AreEqual(1.00, totalCost);
+        }
+
+        [Test]
+        [Description("Two biscuits and one carrot should equal 1.05")]
+        [Category("Valid Totalizer")]
+        public void BiscuitsOffer()
+        {
+            ItemService itemService = new ItemService();
+            isSKUOnSystem = itemService.AddScannedItem(TransactionId, VALID_SKU_ID_B15); 
+            isSKUOnSystem = itemService.AddScannedItem(TransactionId, VALID_SKU_ID_B15); //.45 
+            isSKUOnSystem = itemService.AddScannedItem(TransactionId, VALID_SKU_ID_C40); //.6
+            decimal totalCost = itemService.GetTotalPriceOfItems(transactionID: TransactionId);
+            Assert.AreEqual(1.05, totalCost);
+        }
     }
 }

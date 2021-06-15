@@ -1,6 +1,6 @@
 ﻿using CheckOutScanner.Models;
 using CheckOutScanner.Services;
-using CheckOutScanner.Services.OffersService;
+using CheckOutScanner.Services.Offers;
 using NUnit.Framework;
 using System;
 using System.Collections;
@@ -17,7 +17,7 @@ namespace CheckOutScannerTests.ServicesTests
         [Test]
         public void OffersServiceTestConstructorTest()
         {
-            OffersService offersService = new OffersService(); ;
+            OffersService offersService = new OffersService();
             Assert.IsNotNull(offersService);
         }
 

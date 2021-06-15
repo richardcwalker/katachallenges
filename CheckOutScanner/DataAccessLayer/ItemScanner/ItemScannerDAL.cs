@@ -1,5 +1,6 @@
 ﻿using CheckOutScanner.DataAccessLayer.ItemScanner;
 using CheckOutScanner.Models;
+using CheckOutScanner.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CheckOutScanner.DataAccessLayer
 {
-    public class ItemScannerDAL : IItemScannerDAL
+    public class ItemScannerDAL : ServicesBase, IItemScannerDAL
     {
         private List<Item> ListOfScannedItems { get; set; }
         private List<Item> ItemCostPriceList { get; set; }
@@ -32,6 +33,18 @@ namespace CheckOutScanner.DataAccessLayer
         }
 
         /// <summary>
+        /// Get list of the scanned items in SKU order
+        /// </summary>
+        /// <param name="transactionID"></param>
+        /// <returns></returns>
+
+        public List<Item> GetAllScannedItems(Guid transactionID)
+        {
+            IEnumerable<Item> itemsAddedForTrans = ListOfScannedItems.Where(s => s.TransactionId == transactionID).OrderBy(s => s.SKU);
+            return (new List<Item>(itemsAddedForTrans));
+        }
+
+        /// <summary>
         /// Get the pricing list
         /// </summary>
         /// <returns></returns>
@@ -43,7 +56,5 @@ namespace CheckOutScanner.DataAccessLayer
 
             return ItemCostPriceList;
         }
-
-        
     }
 }

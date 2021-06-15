@@ -15,6 +15,7 @@ namespace CheckOutScanner.Services.CheckOutService
 
         public bool ScanItem()
         {
+            //Call AddScannedItem in ItemService
             return true;
 
         }

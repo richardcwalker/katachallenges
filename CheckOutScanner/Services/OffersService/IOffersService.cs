@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CheckOutScanner.Services.OffersService
+namespace CheckOutScanner.Services.Offers
 {
     public interface IOffersService
     {
