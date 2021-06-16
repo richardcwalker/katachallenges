@@ -14,7 +14,7 @@ namespace CheckOutScanner.BusinessLogic
         }
 
         /// <summary>
-        /// Scanner would pass each item SKU and return true to the UI if Ok else false.
+        /// Scanner would pass each item SKU and a transaction ID and return true to the UI if Ok else false.
         /// </summary>
         /// <param name="TransactionId">Transaction ID from the scanner</param>
         /// <param name="SKUBeingScanned">Product SKU being scanned</param>
