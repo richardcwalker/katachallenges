@@ -87,7 +87,9 @@ namespace CheckOutScannerTests.BusinessLogicTests
         }
 
         [Test]
-        [Description("Biscuits, apple then buiscuts1.80")]
+        [Description("SCENARIO FROM THE SPEC : The checkout accepts items scanned in any order, so that if we scan a pack of Biscuits (B15), " +
+            "an apple (A99) and another pack of biscuits, we’ll recognise two packs of biscuits " +
+            "and apply the discount of 2 for 45. ")]
         [Category("Valid Totalizer")]
         public void BiscuitsAppleBiscuits()
         {
