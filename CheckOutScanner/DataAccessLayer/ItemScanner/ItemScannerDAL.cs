@@ -50,11 +50,26 @@ namespace CheckOutScanner.DataAccessLayer
         /// <returns></returns>
         public List<Item> BuildItemCostPriceList()
         {
+            //TODO Would abstract to DB here
             ItemCostPriceList.Add(new Item { ProductName = "Apples", SKU = "A99", UnitPrice = 0.5M });
             ItemCostPriceList.Add(new Item { ProductName = "Biscuits", SKU = "B15", UnitPrice = 0.3M });
             ItemCostPriceList.Add(new Item { ProductName = "Carrots", SKU = "C40", UnitPrice = 0.6M });
 
             return ItemCostPriceList;
+        }
+
+        /// <summary>
+        /// Load the offers table for our totals calcs
+        /// </summary>
+        /// <returns>A table of prices (SKU, quantity and price)</returns>
+        public IDictionary<string, Offer> BuildOffersPriceTable()
+        {
+            Dictionary<string, Offer> OfferPriceTable = new Dictionary<string, Offer>();
+            //TODO Would abstract to DB here
+            OfferPriceTable.Add("A99", new Offer { SKU = "A99", Quantity = 3, OfferPrice = 1.30M });
+            OfferPriceTable.Add("B15", new Offer { SKU = "B15", Quantity = 2, OfferPrice = 0.45M });
+
+            return OfferPriceTable;
         }
     }
 }
