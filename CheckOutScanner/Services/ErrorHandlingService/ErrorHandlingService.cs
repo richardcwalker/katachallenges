@@ -14,9 +14,13 @@ namespace CheckOutScanner.Services.ErrorHandlingService
 
         }
 
+        /// <summary>
+        /// Log our error message
+        /// </summary>
+        /// <param name="error"></param>
         public void LogError(Error error)
         {
-            //Log to some error DB
+            //TODO Log to some error DB
 
         }
     }

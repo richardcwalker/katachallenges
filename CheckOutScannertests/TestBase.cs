@@ -19,6 +19,7 @@ namespace CheckOutScannerTests
         protected const string EMPTY_SKU_ID = ""; //No SKU Added
         protected const string INVALID_SKU_ID = "Z99"; //No Product Exists
         protected bool isSKUOnSystem;
+        protected bool hasItemScanned;
 
         protected void WriteDescription(Type typ)
         {

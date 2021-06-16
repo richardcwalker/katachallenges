@@ -1,5 +1,6 @@
 ﻿using CheckOutScanner.Helpers;
 using CheckOutScanner.Models;
+using CheckOutScanner.Services.ItemService;
 using System;
 
 namespace CheckOutScanner.BusinessLogic
@@ -9,15 +10,27 @@ namespace CheckOutScanner.BusinessLogic
         private ItemHelper itemHelper;
         public Checkout()
         {
+            itemHelper = new ItemHelper();
         }
 
         /// <summary>
-        /// Scanner would pass each item and (optional??) Transaction ID and return true to the UI if Ok else false.
+        /// Scanner would pass each item SKU and return true to the UI if Ok else false.
         /// </summary>
-        /// <param name="SKUBeingScanned"></param>
-        public bool ScanItem(Guid TransactionID, string SKUBeingScanned)
+        /// <param name="TransactionId">Transaction ID from the scanner</param>
+        /// <param name="SKUBeingScanned">Product SKU being scanned</param>
+        public bool ScanItem(Guid TransactionId, string SKUBeingScanned)
         {
-            return itemHelper.AddItem(TransactionID, SKUBeingScanned);
+            return itemHelper.AddItem(TransactionId, SKUBeingScanned);
+        }
+
+        /// <summary>
+        /// Pass in transaction ID and get totals for this transaction
+        /// </summary>
+        /// <param name="transactionID">Transaction ID from the scanner</param>
+        /// <returns></returns>
+        public Decimal GetTotalPriceOfItems(Guid transactionID)
+        {
+            return itemHelper.GetTotalPriceOfItems(transactionID);
         }
 
     }

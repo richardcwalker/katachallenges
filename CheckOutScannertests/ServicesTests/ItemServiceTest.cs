@@ -157,7 +157,7 @@ namespace CheckOutScannerTests.ServicesTests
         }
 
         [Test]
-        [Description("Four biscuits and one carrot should equal 1.50(carrot scanned in the middle)")]
+        [Description("Two biscuits and one carrot should equal 1.50(carrot scanned in the middle)")]
         [Category("Valid Totalizer")]
         public void OneBiscuitOneAppleOneBiscuitScenarioForSpec()
         {

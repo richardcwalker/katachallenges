@@ -12,6 +12,7 @@ namespace CheckOutScanner.Services
     {
         protected const string SKU_NOTFOUND_MESSAGE_001 = "SKU Not Found";
         protected const string SKU_NOTSUPPLIED_MESSAGE_002 = "SKU not supplied by scanner";
+        protected const string TRANSID_NOTSUPPLIED_MESSAGE_003 = "Transaction ID Missing";
         protected const string SYSTEM_EXCEPTION_999 = "System Exception Thrown";
         
 
