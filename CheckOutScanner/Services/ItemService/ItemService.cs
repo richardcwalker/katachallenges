@@ -26,7 +26,7 @@ namespace CheckOutScanner.Services.ItemService
         {
             _itemScannerDAL = new ItemScannerDAL();
             _offersService = new OffersService();
-            ItemCostPriceList = _itemScannerDAL.BuildItemCostPriceList();
+            ItemCostPriceList = _itemScannerDAL.BuildItemCostPriceTable();
         }
 
         /// <summary>
@@ -162,7 +162,7 @@ namespace CheckOutScanner.Services.ItemService
         /// <returns></returns>
         private void SaveScannedItem(Guid transactionID, Item scannedItem)
         {
-            _itemScannerDAL.AddItemScanned(transactionID, scannedItem);
+            _itemScannerDAL.SaveScannedItem(transactionID, scannedItem);
         }
     }
 }

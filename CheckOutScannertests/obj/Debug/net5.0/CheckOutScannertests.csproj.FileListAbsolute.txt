@@ -102,3 +102,5 @@ C:\Development\katachallenges\CheckOutScanner\CheckOutScannertests\obj\Debug\net
 C:\Development\katachallenges\CheckOutScanner\CheckOutScannertests\obj\Debug\net5.0\ref\CheckOutScannerTests.dll
 C:\Development\katachallenges\CheckOutScanner\CheckOutScannertests\obj\Debug\net5.0\CheckOutScannerTests.pdb
 C:\Development\katachallenges\CheckOutScanner\CheckOutScannertests\obj\Debug\net5.0\CheckOutScannerTests.genruntimeconfig.cache
+C:\Development\katachallenges\CheckOutScanner\CheckOutScannertests\bin\Debug\net5.0\Castle.Core.dll
+C:\Development\katachallenges\CheckOutScanner\CheckOutScannertests\bin\Debug\net5.0\Moq.dll

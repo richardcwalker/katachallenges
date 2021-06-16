@@ -1,12 +1,9 @@
-﻿using CheckOutScanner.Services;
+﻿using CheckOutScanner.Models;
+using CheckOutScanner.Services;
 using CheckOutScanner.Services.ErrorHandlingService;
+using Moq;
 using NUnit.Framework;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace CheckOutScannerTests.ServicesTests
 {
@@ -18,6 +15,20 @@ namespace CheckOutScannerTests.ServicesTests
         {
             ErrorHandlingService errorHandlingService = new ErrorHandlingService();
             Assert.IsNotNull(errorHandlingService);
+        }
+
+        [Test]
+        public void LogError()
+        {
+            ErrorHandlingService errorHandlingService = new ErrorHandlingService();
+            Error error = new()
+            {
+                ErrorCode = 001,
+                ErrorMessage = "Error logged from test",
+                SKUBeingScanned = "SKU001"
+            };
+            //TODO ERROR LOGGING?!?!?!
+            errorHandlingService.LogError(error);
         }
     }
 }

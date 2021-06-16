@@ -24,9 +24,10 @@ namespace CheckOutScanner.DataAccessLayer
         /// </summary>
         /// <param name="itemScanned"></param>
         /// <returns></returns>
-        public List<Item> AddItemScanned(Guid TransactionID, Item itemScanned)
+        public List<Item> SaveScannedItem(Guid TransactionID, Item itemScanned)
         {
             //Set the Item TransactionID
+            //TODO Would save to some DB storage here...
             itemScanned.TransactionId = TransactionID;
             ListOfScannedItems.Add(itemScanned);
             return ListOfScannedItems;
@@ -48,7 +49,7 @@ namespace CheckOutScanner.DataAccessLayer
         /// Get the pricing list
         /// </summary>
         /// <returns></returns>
-        public List<Item> BuildItemCostPriceList()
+        public List<Item> BuildItemCostPriceTable()
         {
             //TODO Would abstract to DB here
             ItemCostPriceList.Add(new Item { ProductName = "Apples", SKU = "A99", UnitPrice = 0.5M });
