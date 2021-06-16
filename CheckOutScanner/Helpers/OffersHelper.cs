@@ -1,16 +1,12 @@
 ﻿using CheckOutScanner.Models;
 using CheckOutScanner.Services.Offers;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CheckOutScanner.Helpers
 {
-    //Load offers into memory
-    //Calc offer QuantityAdded / QuantityOfferLimit 
-    
+    /// <summary>
+    /// Gets offers data
+    /// </summary>
     public class OffersHelper : HelpersBase
     {
         private OffersService _offersService;

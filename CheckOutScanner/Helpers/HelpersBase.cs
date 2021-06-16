@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace CheckOutScanner.Helpers
 {
+    /// <summary>
+    /// Base class for common logic
+    /// </summary>
     public class HelpersBase : ServicesBase
     {
     }

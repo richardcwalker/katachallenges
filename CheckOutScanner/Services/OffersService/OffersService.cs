@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 
 namespace CheckOutScanner.Services.Offers
 {
+    /// <summary>
+    /// Service for getting offers data
+    /// </summary>
     public class OffersService : ServicesBase, IOffersService
     {
         private ItemScannerDAL _itemScannerDAL;

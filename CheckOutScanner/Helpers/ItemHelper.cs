@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace CheckOutScanner.Helpers
 {
     /// <summary>
-    /// Helper for items 
+    /// Helper for scanner business logic layer 
     /// </summary>
     public class ItemHelper : HelpersBase
     {

@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace CheckOutScanner.Services
 {
+    /// <summary>
+    /// Base class for common services logic / vars
+    /// </summary>
     public class ServicesBase
     {
         protected const string SKU_NOTFOUND_MESSAGE_001 = "SKU Not Found";

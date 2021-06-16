@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace CheckOutScanner.Services.ErrorHandlingService
 {
+    /// <summary>
+    /// Service to log errors (TODO - ToDo: Would need to log this somewhere)
+    /// </summary>
     public class ErrorHandlingService : IErrorHandlingService
     {
         public ErrorHandlingService()

@@ -5,6 +5,9 @@ using System;
 
 namespace CheckOutScanner.BusinessLogic
 {
+    /// <summary>
+    /// Class used by teh actual scanner software
+    /// </summary>
     public class Checkout : BusinessLogicBase
     {
         private ItemHelper itemHelper;

@@ -7,6 +7,9 @@ using System.Linq;
 
 namespace CheckOutScanner.Services.ItemService
 {
+    /// <summary>
+    /// Service for handling scanned items and totals for all items
+    /// </summary>
     public class ItemService : ServicesBase, IItemService
     {
         private List<Item> ItemCostPriceList;
