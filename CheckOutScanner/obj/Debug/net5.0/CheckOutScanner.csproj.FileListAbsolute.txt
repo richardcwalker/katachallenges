@@ -21,4 +21,3 @@ C:\Development\katachallenges\CheckOutScanner\CheckOutScanner\obj\Debug\net5.0\C
 C:\Development\katachallenges\CheckOutScanner\CheckOutScanner\obj\Debug\net5.0\CheckOutScanner.dll
 C:\Development\katachallenges\CheckOutScanner\CheckOutScanner\obj\Debug\net5.0\ref\CheckOutScanner.dll
 C:\Development\katachallenges\CheckOutScanner\CheckOutScanner\obj\Debug\net5.0\CheckOutScanner.pdb
-C:\Development\katachallenges\CheckOutScanner\CheckOutScanner\obj\Debug\net5.0\CheckOutScanner.csproj.AssemblyReference.cache
